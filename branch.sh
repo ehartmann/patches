@@ -9,8 +9,13 @@ source scripts/property_utils.sh
 
 SQ_HOME=$1
 
-BRANCH_FILE=~/DEV/branch/sonar-branch-plugin/target/sonar-branch-plugin-1.0-SNAPSHOT.jar
-EXT_DIR=$SQ_HOME/extensions/plugins/
-echo "copy $BRANCH_FILE to $EXT_DIR"
-cp  $BRANCH_FILE $EXT_DIR
+if [ "${SONARQUBE_DEV+x}" ]; then
+    DEV=$SONARQUBE_DEV
+else
+    DEV=~/DEV
+fi
+
+PLUGIN_PATH=$DEV/sonar-branch/sonar-branch-plugin/target/sonar-branch-plugin-1.1-SNAPSHOT.jar
+EXT_DIR=$SQ_HOME/extensions/plugins
+cp -v "$PLUGIN_PATH" "$EXT_DIR"/
 

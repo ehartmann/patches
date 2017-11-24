@@ -9,8 +9,13 @@ source scripts/property_utils.sh
 
 SQ_HOME=$1
 
-LICENSE_FILE=~/DEV/license/sonar-dev-license-plugin/target/sonar-dev-license-plugin-3.3-SNAPSHOT.jar
-EXT_DIR=$SQ_HOME/extensions/plugins/
-echo "copy $LICENSE_FILE to $EXT_DIR"
-cp  $LICENSE_FILE $EXT_DIR
+if [ "${SONARQUBE_DEV+x}" ]; then
+    DEV=$SONARQUBE_DEV
+else
+    DEV=~/DEV
+fi
+
+PLUGIN_PATH=$DEV/sonar-license/sonar-dev-license-plugin/target/sonar-dev-license-plugin-3.3-SNAPSHOT.jar
+EXT_DIR=$SQ_HOME/extensions/plugins
+cp -v "$PLUGIN_PATH" "$EXT_DIR"/
 
