@@ -15,7 +15,7 @@ else
     DEV=~/DEV
 fi
 
-PLUGIN_PATH=$DEV/sonar-branch/sonar-branch-plugin/target/sonar-branch-plugin-1.1-SNAPSHOT.jar
+PLUGIN_PATH=$DEV/sonar-core-plugins/sonar-branch-plugin/target/sonar-branch-plugin-7.1-SNAPSHOT.jar
 EXT_DIR=$SQ_HOME/extensions/plugins
 cp -v "$PLUGIN_PATH" "$EXT_DIR"/
 
