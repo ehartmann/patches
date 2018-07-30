@@ -6,10 +6,8 @@
 set -uo pipefail
 
 SQ_HOME=$1
-#SQ_HOME="/home/sebastienl/DEV/sonarqube/sonar-application/target/sonarqube-5.2-SNAPSHOT"
 
-
-SRC_PLUGIN_DIR=~/DEV/patches/plugins
+SRC_PLUGIN_DIR=~/Projects/eric/patches/plugins
 PLUGIN_DIR=$SQ_HOME/extensions/plugins
 
 
