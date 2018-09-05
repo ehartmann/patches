@@ -7,7 +7,7 @@ set -uo pipefail
 
 SQ_HOME=$1
 
-SRC_PLUGIN_DIR=~/Projects/eric/patches/plugins
+SRC_PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"/plugins
 PLUGIN_DIR=$SQ_HOME/extensions/plugins
 
 

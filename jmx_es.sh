@@ -4,8 +4,8 @@ set -euo pipefail
 source scripts/property_utils.sh
 
 SQ_HOME=$1
-ACCESS_FILE="/home/sebastienl/DEV/patches/jmxremote.access"
-PASSWORD_FILE="/home/sebastienl/DEV/patches/jmxremote.password"
+ACCESS_FILE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/jmxremote.access"
+PASSWORD_FILE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/jmxremote.password"
 RMI_PORT=12489
 PORT=12488
 
